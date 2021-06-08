@@ -6,7 +6,7 @@ AppBar appBar() {
   return AppBar(
     actions: [
       Padding(
-        padding: EdgeInsets.all(18.4),
+        padding: EdgeInsets.all(8),
         child: IconButton(
           icon: const Icon(Icons.calendar_today),
           color: Colors.white,

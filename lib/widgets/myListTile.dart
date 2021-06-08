@@ -10,18 +10,32 @@ class MyListTile extends StatelessWidget {
   final String duration;
   final String type;
   final String email;
+  final String status;
   Color sideColor;
+  Color mainColor;
+  Color text;
 
-  MyListTile({this.title, this.type, this.time, this.duration, this.email}) {
-    switch (this.type) {
-      case 'Assignment':
+  MyListTile(
+      {this.title,
+      this.status,
+      this.type,
+      this.time,
+      this.duration,
+      this.email}) {
+    switch (this.status) {
+      case 'cancelled':
         sideColor = kBlack;
+        mainColor = k1Red;
+        text = kRed;
         break;
-      case 'Quiz':
-        sideColor = kYellow;
+      case 'update':
+        sideColor = kBlue;
+        mainColor = k1Yellow;
+        text = kYellow;
         break;
       default:
         sideColor = kBlue;
+        mainColor = kBlue;
     }
   }
 
@@ -33,7 +47,8 @@ class MyListTile extends StatelessWidget {
       },
       child: Container(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(MySpaces.listTileLeftPadding, 0, 0, MySpaces.horizontalScreenPadding),
+          padding: EdgeInsets.fromLTRB(MySpaces.listTileLeftPadding, 0, 0,
+              MySpaces.horizontalScreenPadding),
           child: Row(
             children: [
               Expanded(
@@ -49,6 +64,7 @@ class MyListTile extends StatelessWidget {
                         ),
                       ),
                     ),
+                    
                     Expanded(
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -68,6 +84,20 @@ class MyListTile extends StatelessWidget {
                   ],
                 ),
               ),
+              Container(
+            height: 10,
+            width: 40,
+                      color: mainColor,
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          '$status',
+                          
+                          style: 
+                            MyFonts.medium.size(5),
+                        ),
+                      ),
+                    ),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,7 +120,7 @@ class MyListTile extends StatelessWidget {
                         ),
                       ),
                     ),
-               Expanded(
+                    Expanded(
                       child: Align(
                         alignment: Alignment.bottomCenter,
                         child: Text(
