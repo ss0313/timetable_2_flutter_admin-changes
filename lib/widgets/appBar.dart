@@ -4,6 +4,17 @@ import 'package:timetable_2_flutter_admin/globals/myFonts.dart';
 
 AppBar appBar() {
   return AppBar(
+    actions: [
+      Padding(
+        padding: EdgeInsets.all(18.4),
+        child: IconButton(
+          icon: const Icon(Icons.calendar_today),
+          color: Colors.white,
+          onPressed: () {},
+        ),
+      ),
+
+    ],
     title: RichText(
       text: TextSpan(
           text: 'timetable',
