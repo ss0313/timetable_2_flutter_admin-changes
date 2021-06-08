@@ -21,6 +21,7 @@ class MyListTile extends StatelessWidget {
   Color mainColor;
   Color text;
   Color bgColor;
+
   MyListTile(
       {this.title,
       this.status,
@@ -33,13 +34,17 @@ class MyListTile extends StatelessWidget {
         sideColor = kBlack;
         mainColor = k1Red;
         text = kRed;
+
         bgColor=lRed;
+
         break;
       case 'update':
         sideColor = kBlue;
         mainColor = k1Yellow;
         text = kYellow;
+
         bgColor=lYellow;
+
         break;
       default:
         sideColor = kBlue;
@@ -114,6 +119,18 @@ class MyListTile extends StatelessWidget {
                   ),
                 ),
               ),
+            height: 10,
+            width: 40,
+                      color: mainColor,
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          '$status',
+                          style: 
+                            MyFonts.medium.size(5),
+                        ),
+                      ),
+                    ),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
