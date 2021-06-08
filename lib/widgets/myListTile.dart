@@ -92,7 +92,6 @@ class MyListTile extends StatelessWidget {
                         alignment: Alignment.center,
                         child: Text(
                           '$status',
-                          
                           style: 
                             MyFonts.medium.size(5),
                         ),
