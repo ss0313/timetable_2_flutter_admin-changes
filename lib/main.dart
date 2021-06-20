@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:timetable_2_flutter_admin/pages/homepage.dart';
 import 'package:timetable_2_flutter_admin/pages/loginpage.dart';
 import 'package:timetable_2_flutter_admin/pages/power_up.dart';
+import 'package:timetable_2_flutter_admin/pages/splashpage.dart';
 import 'package:timetable_2_flutter_admin/stores/authentication_store.dart';
 
 Future<void> main() async {
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
               title: 'Timetable Admin',
               initialRoute: '/',
               routes: {
-                '/': (context) => HomePage(),
+                '/': (context) => SplashPage(),
                 '/approval': (context) => HomePage(),
                 '/login': (context) => LoginPage(),
                 '/powerup': (context) => PowerUp(),
@@ -45,7 +46,6 @@ class MyApp extends StatelessWidget {
         }
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData.light(),
           home: PowerUp(),
         );
       },
