@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.10.0 <3.0.0'
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -26,9 +26,9 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons:
+  cupertino_icons: ^1.0.2
   firebase_core: 
-  firebase_auth: 
+  firebase_auth: ^0.20.1
   google_fonts:
   flutter_webview_plugin: 
   aad_oauth:
@@ -36,6 +36,9 @@ dependencies:
   mobx:
   flutter_mobx:
   flutter_slidable: 
+  cloud_firestore:
+  stream_transform: ^2.0.0
+  intl: 
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +76,7 @@ flutter:
     - family: Montserrat
       fonts:
         - asset: assets/fonts/Montserrat-Regular.ttf
+          weight: 400
         - asset: assets/fonts/Montserrat-Medium.ttf
           weight: 500
         - asset: assets/fonts/Montserrat-Light.ttf
